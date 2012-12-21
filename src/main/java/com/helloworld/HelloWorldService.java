@@ -1,6 +1,6 @@
 package com.helloworld;
 
-import com.dropwizard.health.TemplateHealthCheck;
+import com.helloworld.health.TemplateHealthCheck;
 import com.helloworld.resources.HelloWorldResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
