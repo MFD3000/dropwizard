@@ -1,5 +1,7 @@
 package com.helloworld;
 
+import com.dropwizard.health.TemplateHealthCheck;
+import com.helloworld.resources.HelloWorldResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
@@ -17,7 +19,10 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
     @Override
     public void run(HelloWorldConfiguration configuration,
                     Environment environment) {
-        // nothing to do yet
+    	final String template = configuration.getTemplate();
+        final String defaultName = configuration.getDefaultName();
+        environment.addResource(new HelloWorldResource(template, defaultName));
+        environment.addHealthCheck(new TemplateHealthCheck(template));
     }
 
 }
