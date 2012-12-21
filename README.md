@@ -1,4 +1,0 @@
-dropwizard
-==========
-
-Drop wizard helloworld
