@@ -3,16 +3,16 @@ defaultName: Stranger
 
 database:
   # the name of your JDBC driver
-	driverClass: org.postgresql.Driver
+  driverClass: org.postgresql.Driver
 
   # the username
   user: postgres
 
   # the password
-  password:
+  password: SQL
 
   # the JDBC URL
-  url: jdbc:postgres://localhost:5432/segmintone
+  url: jdbc:postgresql://localhost:5432/segmintone
 
   # any properties specific to your JDBC driver:
   properties:

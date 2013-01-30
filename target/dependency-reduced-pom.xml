@@ -21,7 +21,7 @@
               <transformers>
                 <transformer />
                 <transformer>
-                  <mainClass>com.helloworld.HelloWorldService</mainClass>
+                  <mainClass>com.helloworld.KliService</mainClass>
                 </transformer>
               </transformers>
             </configuration>
