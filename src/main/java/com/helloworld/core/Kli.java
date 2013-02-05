@@ -1,28 +1,28 @@
 package com.helloworld.core;
 
 public class Kli {
-    private int termCode;
+    private int termcode;
     private int parentTermCode;
     private String termDescription;
-    private int adicTotal;
-    private int adicOnline;
+    private long adicTotal;
+    private long adicOnline;
     
 
-    public Kli(int termCode, String termDescription, int parentTermCode) {
-    	this.termCode = termCode;
+    public Kli(int termcode, String termDescription, int parentTermCode) {
+    	this.termcode = termcode;
     	this.termDescription = termDescription;
     	this.parentTermCode = parentTermCode;
        
     }
 
-    public int getTermCode()
+    public int getTermcode()
     {
-      return termCode;
+      return termcode;
     }
 
-    public void setTermCode(int termCode)
+    public void setTermcode(int termcode)
     {
-      this.termCode = termCode;
+      this.termcode = termcode;
     }
 
     public String getTermDescription()
@@ -45,22 +45,22 @@ public class Kli {
       this.parentTermCode = parentTermCode;
     }
     
-    public int getAdicTotal()
+    public long getAdicTotal()
     {
       return this.adicTotal;
     }
     
-    public void setAdicTotal(int adicTotal)
+    public void setAdicTotal(long adicTotal)
     {
       this.adicTotal = adicTotal;
     }
     
-    public int getAdicOnline()
+    public long getAdicOnline()
     {
-      return this.adicTotal;
+      return this.adicOnline;
     }
     
-    public void setAdicOnlinr(int adicOnline)
+    public void setAdicOnline(long adicOnline)
     {
       this.adicOnline = adicOnline;
     }

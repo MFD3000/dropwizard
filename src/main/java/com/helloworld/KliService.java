@@ -1,5 +1,7 @@
 package com.helloworld;
 
+import java.io.IOException;
+
 import org.skife.jdbi.v2.DBI;
 import org.postgresql.*;
 import com.helloworld.health.TemplateHealthCheck;
@@ -29,8 +31,6 @@ public class KliService extends Service<KliConfiguration> {
 		final String template = configuration.getTemplate();
 		final String defaultName = configuration.getDefaultName();
 
-		
-
 		final DatabaseConfiguration data = new DatabaseConfiguration();
 		data.setDriverClass("org.postgresql.Driver");
 		data.setUrl("jdbc:postgresql://localhost:5432/segmintone");
@@ -44,7 +44,12 @@ public class KliService extends Service<KliConfiguration> {
 
 		final KliDAO dao = jdbi.onDemand(KliDAO.class);
 
-		environment.addResource(new KliResource(dao));
+		try {
+			environment.addResource(new KliResource(dao));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		
 		environment.addHealthCheck(new TemplateHealthCheck(template));

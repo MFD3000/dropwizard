@@ -15,11 +15,11 @@ public interface KliDAO {
 	 @SqlQuery("SELECT term_code, term_desc, parent_term_code FROM get_kli_children(4, :termcode)")
 	 @Mapper(KliMapper.class)
 	 List<Kli> findTerms(@Bind("termcode") int termcode);
+
+	 @SqlQuery("SELECT distinct wt.term_desc FROM sgmt_kli_adic ska JOIN wand.wandterms wt ON ska.kli = wt.term_code WHERE ska.adic = :adic ")
+	 List<String> listByAdic(@Bind("adic") String adic);
 	
 	 
-	 //@SqlQuery("select id, name from something where id = :id")
-	  
-	  //Something findById(@Bind("id") int id);
 	 
 	 
 	 
