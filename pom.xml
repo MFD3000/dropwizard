@@ -27,6 +27,12 @@
         <artifactId>dropwizard-core</artifactId>
         <version>0.6.1</version>
     </dependency>
+    <dependency>
+        <groupId>com.yammer.dropwizard</groupId>
+        <artifactId> dropwizard-views</artifactId>
+        <version>0.6.1</version>
+    </dependency>
+   
      <dependency>
         <groupId>com.yammer.dropwizard</groupId>
         <artifactId>dropwizard-jdbi</artifactId>

@@ -16,12 +16,14 @@ public interface KliDAO {
 	 @Mapper(KliMapper.class)
 	 List<Kli> findTerms(@Bind("termcode") int termcode);
 
-	 @SqlQuery("SELECT distinct wt.term_desc FROM sgmt_kli_adic ska JOIN wand.wandterms wt ON ska.kli = wt.term_code WHERE ska.adic = :adic ")
-	 List<String> listByAdic(@Bind("adic") String adic);
+	 
+	 @SqlQuery("SELECT distinct termcode as term_code, parent_termcode as parent_term_code, term_desc FROM sgmt_kli_adic ska JOIN kli_collection kc ON ska.kli = kc.termcode where ska.adic = :adic ")
+	 @Mapper(KliMapper.class)
+	 List<Kli> listByAdic(@Bind("adic") String adic);
+	 
+	 @SqlQuery("SELECT id from sgmt_adic_int_map where adic = :adic ")
+	 Long adicIndex(@Bind("adic") String adic);
 	
-	 
-	 
-	 
 	 
 	
 }

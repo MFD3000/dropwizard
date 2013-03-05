@@ -15,6 +15,8 @@ import com.yammer.dropwizard.jdbi.DBIFactory;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
 import redis.clients.jedis.Jedis;
 
+import com.yammer.dropwizard.views.*;
+
 public class KliService extends Service<KliConfiguration> {
 	public static void main(String[] args) throws Exception {
 		new KliService().run(args);
@@ -23,6 +25,7 @@ public class KliService extends Service<KliConfiguration> {
 	@Override
 	public void initialize(Bootstrap<KliConfiguration> bootstrap) {
 		bootstrap.setName("hello-world");
+		bootstrap.addBundle(new ViewBundle());
 
 	}
 

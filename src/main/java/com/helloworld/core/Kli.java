@@ -1,21 +1,29 @@
 package com.helloworld.core;
 
+import java.util.List;
+
 public class Kli {
     private int termcode;
     private int parentTermCode;
     private String termDescription;
     private long adicTotal;
     private long adicOnline;
+    private List<Kli> children;
     
 
-    public Kli(int termcode, String termDescription, int parentTermCode) {
+    public Kli(int termcode, String termDescription, int parentTermCode, List<Kli> children) {
     	this.termcode = termcode;
     	this.termDescription = termDescription;
     	this.parentTermCode = parentTermCode;
+    	this.children = children;
        
     }
 
-    public int getTermcode()
+    public Kli() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getTermcode()
     {
       return termcode;
     }
@@ -63,6 +71,11 @@ public class Kli {
     public void setAdicOnline(long adicOnline)
     {
       this.adicOnline = adicOnline;
+    }
+    
+    public List<Kli> getChildren()
+    {
+      return this.children;
     }
     
 }
