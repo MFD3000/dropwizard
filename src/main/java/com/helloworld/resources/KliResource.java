@@ -92,6 +92,17 @@ public class KliResource {
 
 		return klis;
 	}
+	
+	@GET
+	@Path("/list/{adic}/{partnerId}")
+	public List<String> listByUcicAndPartner(@PathParam("ucic") String ucic, @PathParam("partnerId") String pid ) {
+
+		String adic = kliDAO.getAdicByUcicAndPartner(ucic, pid);
+		List<String> klis = kliDAO.listDescriptionsByAdic(adic);
+
+		return klis;
+	}
+	
 	public List<Kli> gatherChildren(List<Kli> klis){
 
 		for(int i = 0; i < klis.size(); i++) {

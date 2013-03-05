@@ -23,8 +23,15 @@ public interface KliDAO {
 	 
 	 @SqlQuery("SELECT id from sgmt_adic_int_map where adic = :adic ")
 	 Long adicIndex(@Bind("adic") String adic);
-	
 	 
+	 @SqlQuery("SELECT adic " +
+	 		"FROM sgmt_customer " +
+	 		"WHERE ucic = :ucic " +
+	 		"and p_id = :pid")
+	 String getAdicByUcicAndPartner(@Bind("ucic") String ucic, @Bind("pid") String pid);
+	 
+	 @SqlQuery("SELECT distinct term_desc FROM sgmt_kli_adic ska JOIN kli_collection kc ON ska.kli = kc.termcode where ska.adic = :adic ")
+	 List<String> listDescriptionsByAdic(@Bind("adic") String adic);
 	
 }
 
